@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "1f973bc6-5c5b-4cd0-bd75-752a2c40c2f7",
+		"name": "Erajaya - Jdsport Raffle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Backend",
+			"item": [
+				{
+					"name": "List Raffle Active",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "JDSport",
+								"type": "text"
+							},
+							{
+								"key": "Password",
+								"value": "secretJdSport",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/raffle/ListRaffleActive",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"raffle",
+								"ListRaffleActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User Winner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "JDSport",
+								"type": "text"
+							},
+							{
+								"key": "Password",
+								"value": "secretJdSport",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"236781236\",\n    \"sku\" : \"ashdjashd\",\n    \"quantity\" : \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/raffle/CheckUserWinner",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"raffle",
+								"CheckUserWinner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transaction Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "JDSport",
+								"type": "text"
+							},
+							{
+								"key": "Password",
+								"value": "secretJdSport",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"236781236\",\n    \"sku\" : \"ashdjashd\",\n    \"status\" : \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/raffle/UpdateTransactionStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"raffle",
+								"UpdateTransactionStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
