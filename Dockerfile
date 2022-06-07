@@ -1,18 +1,45 @@
-FROM golang:1.18 AS builder
+FROM golang:1.18-alpine AS builder
 
-WORKDIR /app
+# Time zone
+RUN apk add --no-cache tzdata
 
-# Download necessary Go modules
-COPY go.* ./
+# Set necessary environmet variables needed for our image
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
 
+# Move to working directory /build
+WORKDIR /build
+
+# Copy and download dependency using go mod
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
 
-# COPY *.go ./
+# Copy the code into the container
 COPY *.go ./
 
-RUN go build -o /jdsport-raffle-backend
+# Build the application
+RUN go build -o main main.go
 
-# Make sure to expose the port the HTTP server is using
-EXPOSE 8001
-# Run the app binary when we run the container
-ENTRYPOINT ["/jdsport-raffle-backend"]
+# Move to /dist directory as the place for resulting binary folder
+# WORKDIR /dist
+
+# Copy binary from build to main folder
+# RUN cp /build/main .
+
+# Build a small image
+# FROM scratch
+# COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+# COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+# COPY --from=builder /build/database/migrationSchema/ /database/migrationSchema/
+# COPY --from=builder /dist/main /
+# COPY ./.env /.env
+# COPY ./gcp-cardential.json /gcp-cardential.json
+ENV TZ=Asia/Jakarta
+# ENV MODE=dev
+# ENV MIGRATE_DATABASE=true
+
+# Run executable
+CMD ["./jdsport-raffle-backend"]
