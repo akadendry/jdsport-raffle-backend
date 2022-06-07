@@ -3,7 +3,7 @@ package jdsport_raffle_backend
 import (
 	"os"
 
-	"github.com/akadendry/jdsport-raffle-backend/v2/models"
+	"github.com/akadendry/jdsport-raffle-backend/v1/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
