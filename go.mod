@@ -1,3 +1,3 @@
-module github.com/akadendry/jdsport-raffle-backend/v1
+module github.com/akadendry/jdsport-raffle-backend
 
 go 1.18

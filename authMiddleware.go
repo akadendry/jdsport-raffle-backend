@@ -1,7 +1,7 @@
 package jdsport_raffle_backend
 
 import (
-	"github.com/akadendry/jdsport-raffle-backend/v1/util"
+	"github.com/akadendry/jdsport-raffle-backend/util"
 	"github.com/gofiber/fiber/v2"
 )
 

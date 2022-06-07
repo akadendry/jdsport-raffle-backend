@@ -2,9 +2,9 @@ package jdsport_raffle_backend
 
 import (
 
-	// "github.com/akadendry/jdsport-raffle-backend/v1middlewares"
+	// "github.com/akadendry/jdsport-raffle-backendmiddlewares"
 
-	"github.com/akadendry/jdsport-raffle-backend/v1/controllers"
+	"github.com/akadendry/jdsport-raffle-backend/controllers"
 	"github.com/gofiber/fiber/v2"
 )
 

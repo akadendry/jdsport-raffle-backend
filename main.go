@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/akadendry/jdsport-raffle-backend/v1/database"
-	"github.com/akadendry/jdsport-raffle-backend/v1/routes"
+	"github.com/akadendry/jdsport-raffle-backend/database"
+	"github.com/akadendry/jdsport-raffle-backend/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"

@@ -10,14 +10,14 @@ import (
 	"os"
 	"strings"
 
-	"github.com/akadendry/jdsport-raffle-backend/v1/database"
-	"github.com/akadendry/jdsport-raffle-backend/v1/models"
+	"github.com/akadendry/jdsport-raffle-backend/database"
+	"github.com/akadendry/jdsport-raffle-backend/models"
 	"github.com/gosimple/slug"
 
 	// "log"
 	"time"
 
-	// "github.com/akadendry/jdsport-raffle-backend/v1middlewares"
+	// "github.com/akadendry/jdsport-raffle-backendmiddlewares"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
